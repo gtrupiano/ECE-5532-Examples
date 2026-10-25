@@ -36,8 +36,8 @@ class TfBroadcaster(Node):
             elif p.name == 'y':
                 self.transform_msg.transform.translation.y = p.value
             elif p.name == 'yaw':
-                self.transform_msg.transform.rotation.w = math.cos(p.value)
-                self.transform_msg.transform.rotation.z = math.sin(p.value)
+                self.transform_msg.transform.rotation.w = math.cos(0.5 * p.value)
+                self.transform_msg.transform.rotation.z = math.sin(0.5 * p.value)
 
         return SetParametersResult(successful=True)
 
